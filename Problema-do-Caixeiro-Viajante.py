@@ -14,7 +14,7 @@ def main():
     for x in range(1, n):
         g[x + 1, ()] = matrix[x][0]
     
-    get_minimum(1,range(2,n+1))
+    cost = get_minimum(1,range(2,n+1))
     
     solution = p.pop()
     a = [1]
@@ -28,13 +28,7 @@ def main():
                 break
     a.append(1)
    
-    b = a.copy()
-    b.remove(b[0])
-    b.append(a[0])
-    cost = 0
-    for i,j in zip(a,b):
-        if i != j:
-            cost+=matrix[i-1][j-1]
+    
     print("Valor: ",cost)
     print("Circuito: ", a)
     
